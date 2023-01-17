@@ -1,5 +1,5 @@
 <template>
-
+  <n-message-provider>
     <n-form ref="formRef" :model="model" :rules="rules">
       <n-form-item path="age" label="年龄">
         <n-input v-model:value="model.age" @keydown.enter.prevent />
@@ -43,6 +43,7 @@
   
     <pre>{{ JSON.stringify(model, null, 2) }}
   </pre>
+  </n-message-provider>
   </template>
   
   <script>

@@ -1,18 +1,23 @@
-import { createRouter, createWebHashHistory, createWebHistory } from 'vue-router'
-import He from '../src/components/HelloWorld.vue'
-import Re from '/Users/liwenchao/WebstormProjects/vue/vue-project-demo/src/components/register.vue'
+import { createRouter, createWebHashHistory } from 'vue-router'
 
 
 
 const routers= [
-
     {
-        path:'/he',
-        component:He
+        path:'/hello',
+        component:() => import('../components/HelloWorld.vue')
     },
     {
-        path:'/re',
-        component:Re
+        path:'/register',
+        component:() => import('../components/register.vue')
+    },
+    {
+        path:'/back',
+        component:() => import('../../src/App.vue')
+    },
+    {
+        path:'/table',
+        component:() => import('../components/table.vue')
     }
 ];
 
@@ -21,7 +26,7 @@ const routers= [
 const router = createRouter({
     // history: routerHistory,  // history
     history: createWebHashHistory(), // hash
-    routers,
+    routes: routers
   });
 
 export default router;
